@@ -8,6 +8,13 @@ get '/secret' do
   "This message is secret"
 end
 
-get '/cat' do
+get '/random-cat' do
+  @name = ["Amigo", "Oscar", "Viking"].sample
+  erb :image
+end
+
+get '/named-cat' do
+  p params
+  @name = params[:name]
   erb :image
 end
