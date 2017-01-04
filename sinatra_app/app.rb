@@ -1,7 +1,7 @@
 require "sinatra"
 
 get '/' do
-  "Hello World"
+  erb :cat_form
 end
 
 get '/secret' do
@@ -13,7 +13,7 @@ get '/random-cat' do
   erb :image
 end
 
-get '/named-cat' do
+post '/named-cat' do
   p params
   @name = params[:name]
   erb :image
